@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css?family=Comfortaa|Patua+One");
+
+/*Typography
+--------------------------------------------------------------*/
+body,
+button,
+input,
+select,
+textarea {
+	color: #404040;
+	font-family: "Comfortaa", Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.5;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: "Patua One", serif;
+  letter-spacing: 2px;
+}
+
+.ticketBooth {
+    margin-bottom: 1rem;
+}
+
+.attractions {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 30rem;
+}
+
+.attraction {
+    flex: 1;
+    border-left: 1px dashed gray;
+    border-right: 1px dashed gray;
+    text-align: center;
+}
+
+.people {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 25rem;
+}
+
+.person {
+    height: 1rem;
+    width: 1rem;
+    margin: 0.2rem 0.2rem;
+}
+
+.eater {
+    background-color: fuchsia;
+}
+
+.rider {
+    background-color: dodgerblue;
+}
+
+.bigSpender {
+    background-color: orange;
+}
+
+.player {
+    background-color: lawngreen;
+}
+
+.gawker {
+    background-color: firebrick;
+}
+
+.customers {
+    font-weight: 700;
+    padding: 1rem;
+}
+
