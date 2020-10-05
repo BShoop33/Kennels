@@ -1,0 +1,27 @@
+{
+    "products": [
+        {
+            "id": 1
+        }
+    ],
+    "locations": [
+        {
+            "id": 1
+        }
+    ],
+    "employees": [
+        {
+            "id": 1
+        }
+    ],
+    "productTypes": [
+        {
+            "id": 1
+        }
+    ],
+    "customers": [
+        {
+            "id": 1
+        }
+    ]
+}
