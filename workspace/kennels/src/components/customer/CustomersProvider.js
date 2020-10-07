@@ -9,7 +9,7 @@ export const CustomerContext = createContext()
 /*
  This component establishes what data can be used.
  */
-export const CustomerProvider = (props) => {
+export const CustomersProvider = (props) => {
     const [customers, setCustomers] = useState([])
 
     const getCustomers = () => {
