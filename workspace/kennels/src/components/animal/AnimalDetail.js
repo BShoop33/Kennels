@@ -21,6 +21,8 @@ export const AnimalDetail = () => {
             })
     }, [])
 
+
+
     /*the ? after the animal object name below just says not to error out if the property specified isn't found*/
     return (
         <section className="animal">
@@ -38,7 +40,16 @@ export const AnimalDetail = () => {
                     }, 1500)
 
                 }}>Release Animal
-</button>
+            </button>
+
+            {/* used in chapter 13 start*/}
+            <button onClick={() => {
+                history.push(`/animals/edit/${animal.id}`)
+            }}>Edit</button>
+            {/* used in chapter 13 end */}
+
         </section>
     )
 }
+
+

@@ -6,6 +6,11 @@ import React, { useState, createContext } from "react"
 */
 export const LocationContext = createContext()
 
+const getLocationById = (locationId) => {
+    return fetch(`http://localhost:8088/locations/${locationId}`)
+        .then(res => res.json())
+}
+
 /*
  This component establishes what data can be used.
  */
@@ -29,9 +34,16 @@ export const LocationsProvider = (props) => {
             .then(getLocations)
     }
 
+    const deleteLocation = locationId => {
+        return fetch(`http://localhost:8088/locations/${locationId}`, {
+            method: "DELETE"
+        })
+            .then(getLocations)
+    }
+
     return (
         <LocationContext.Provider value={{
-            locations, getLocations, addLocations
+            locations, getLocations, addLocations, getLocationById, deleteLocation
         }}>
             {props.children}
         </LocationContext.Provider>
