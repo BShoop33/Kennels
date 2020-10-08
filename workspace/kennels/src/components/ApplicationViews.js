@@ -3,8 +3,9 @@ import { Route } from "react-router-dom"
 import { Home } from "./Home"
 import { AnimalProvider } from "./animal/AnimalProvider"
 import { AnimalList } from "./animal/AnimalList"
-import { AnimalForm } from "./animal/AnimalForm.js"
-import { AnimalDetail } from "./animal/AnimalDetail.js"
+import { AnimalForm } from "./animal/AnimalForm"
+import { AnimalDetail } from "./animal/AnimalDetail"
+import { AnimalSearch } from "./animal/AnimalSearch"
 // import { CustomersCard } from "./customer/CustomersCard.js"
 import { CustomersProvider } from "./customer/CustomersProvider.js"
 import { CustomersList } from "./customer/CustomersList.js"
@@ -16,6 +17,7 @@ import { EmployeesForm } from "./employee/EmployeesForm.js"
 import { LocationsProvider } from "./location/LocationsProvider.js"
 import { LocationsList } from "./location/LocationsList.js"
 import { LocationForm } from "./location/LocationsForm.js"
+import { LocationDetail } from "./location/LocationsDetail.js"
 
 
 
@@ -31,47 +33,10 @@ export const ApplicationViews = () => {
             {/* Render the animal list when http://localhost:3000/animals */}
             <AnimalProvider>
                 <Route exact path="/animals">
+                    <AnimalSearch />
                     <AnimalList />
                 </Route>
             </AnimalProvider>
-
-            {/* Render the locations list when http://localhost:3000/locations */}
-            <LocationsProvider>
-                <Route exact path="/locations">
-                    <LocationsList />
-                </Route>
-            </LocationsProvider>
-
-            <LocationsProvider>
-                <Route path="/locations/create">
-                    <LocationForm />
-                </Route>
-            </LocationsProvider>
-
-
-
-            {/* Render the customers list when http://localhost:3000/customers */}
-            <CustomersProvider>
-                <Route exact path="/customers">
-                    <CustomersList />
-                </Route>
-            </CustomersProvider>
-
-            {/* Render the employee list when http://localhost:3000/employees */}
-            <EmployeesProvider>
-                <LocationsProvider>
-                    <Route path="/employees/create">
-                        <EmployeesForm />
-                    </Route>
-                </LocationsProvider>
-            </EmployeesProvider>
-
-            <CustomersProvider>
-                <Route exact path="/customers">
-                    <CustomersList />
-                </Route>
-            </CustomersProvider>
-
 
             {/* Render the animal list when http://localhost:3000/animals */}
             <AnimalProvider>
@@ -93,6 +58,74 @@ export const ApplicationViews = () => {
                     </CustomersProvider>
                 </LocationsProvider>
             </AnimalProvider>
+
+            {/* used in chapter 13 start*/}
+            <AnimalProvider>
+                <LocationsProvider>
+                    <CustomersProvider>
+                        <Route path="/animals/edit/:animalId(\d+)">
+                            <AnimalForm />
+                        </Route>
+                    </CustomersProvider>
+                </LocationsProvider>
+            </AnimalProvider>
+            {/* used in chapter 13 end */}
+
+
+
+
+
+
+            {/* Render the locations list when http://localhost:3000/locations */}
+            <LocationsProvider>
+                <Route exact path="/locations">
+                    <LocationsList />
+                </Route>
+            </LocationsProvider>
+
+            <LocationsProvider>
+                <CustomersProvider>
+                    <AnimalProvider>
+                        <Route exact path="/locations/create">
+                            <LocationForm />
+                        </Route>
+                    </AnimalProvider>
+                </CustomersProvider>
+            </LocationsProvider>
+
+            <LocationsProvider>
+                <CustomersProvider>
+                    <AnimalProvider>
+                        <Route exact path="/locations/detail/:locationId(\d+)">
+                            <LocationDetail />
+                        </Route>
+                    </AnimalProvider>
+                </CustomersProvider>
+            </LocationsProvider>
+
+
+
+
+
+
+
+
+
+            {/* Render the customers list when http://localhost:3000/customers */}
+            <CustomersProvider>
+                <Route exact path="/customers">
+                    <CustomersList />
+                </Route>
+            </CustomersProvider>
+
+            {/* Render the employee list when http://localhost:3000/employees */}
+            <EmployeesProvider>
+                <LocationsProvider>
+                    <Route path="/employees/create">
+                        <EmployeesForm />
+                    </Route>
+                </LocationsProvider>
+            </EmployeesProvider>
 
         </>
     )

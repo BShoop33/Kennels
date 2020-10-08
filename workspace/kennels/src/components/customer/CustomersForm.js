@@ -1,11 +1,11 @@
 import React, { useContext, useRef, useEffect } from "react"
-import { LocationContext } from "../location/LocationsProvider"
+import { CustomerContext } from "./CustomersProvider.js"
 import { useHistory } from 'react-router-dom';
 import "./Locations.css"
 
 export const LocationForm = () => {
 
-    const { getLocations, addLocations } = useContext(LocationContext)
+    const { getCustomers, addCustomers } = useContext(CustomerContext)
 
     /*
         Create references that can be attached to the input
@@ -17,6 +17,7 @@ export const LocationForm = () => {
     */
     const name = useRef(null)
     const address = useRef(null)
+    const email = useRef(null)
 
     /*
         Get animal state and location state on initialization.

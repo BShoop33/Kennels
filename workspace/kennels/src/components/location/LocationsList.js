@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react"
-import { LocationContext } from "./LocationsProvider.js"
-import { LocationsCard } from "./LocationsCard.js"
+import { LocationContext } from "./LocationsProvider"
+import { LocationsCard } from "./LocationsCard"
 import { useHistory } from "react-router-dom"
 import "./Locations.css"
 
@@ -18,6 +18,7 @@ export const LocationsList = () => {
 
     return (
         <>
+
             <h2>Locations</h2>
             <button onClick={() => { history.push("/locations/create") }}>
                 Add Location
